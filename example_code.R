@@ -62,3 +62,85 @@ for(i in 4:1){
   plotColorPalette(recluster_results$centers)
 }
 dev.off()
+
+
+##### EXAMPLE 3
+results <- run_grounded_segmentation("~/segmentr-paper/extdata/images/other_images/DSC_4263.JPG", labels = c("a snake.", "a black square with colors in it."))
+results <- get_segmentation_paths("~/segmentr-paper/extdata/images/other_images/DSC_4263.JPG")
+seg_res <- load_segmentation_results(results$image_path)
+seg_tbl <- create_segmentation_table(seg_res)
+
+img <- readImage(results$image_path, resize = NULL, rotate = NULL)
+pdf("~/segmentr-paper/figures/in-progress/example-3-original.pdf", width = 10, height = 7)
+plotImageArray(img, main = "")
+dev.off()
+
+pdf("~/segmentr-paper/figures/in-progress/example-3-segmented.pdf", width = 10, height = 7)
+plot_seg_results(seg_res, main = "")
+dev.off()
+
+
+
+##### EXAMPLE 4
+results <- run_grounded_segmentation("~/segmentr-paper/extdata/images/other_images/DSC_8167.JPG", labels = c("a snake.", "a ruler."))
+results <- get_segmentation_paths("~/segmentr-paper/extdata/images/other_images/DSC_8167.JPG")
+seg_res <- load_segmentation_results(results$image_path)
+seg_tbl <- create_segmentation_table(seg_res)
+
+img <- readImage(results$image_path, resize = NULL, rotate = NULL)
+pdf("~/segmentr-paper/figures/in-progress/example-4-original.pdf", width = 10, height = 7)
+plotImageArray(img, main = "")
+dev.off()
+
+pdf("~/segmentr-paper/figures/in-progress/example-4-segmented.pdf", width = 10, height = 7)
+plot_seg_results(seg_res, main = "")
+dev.off()
+
+
+##### EXAMPLE 5
+results <- run_grounded_segmentation("~/segmentr-paper/extdata/images/other_images/DSC_8167.JPG", labels = c("a snake.", "small evenly spaced white dashes on a black background next to colorful squares."))
+results <- get_segmentation_paths("~/segmentr-paper/extdata/images/other_images/DSC_8167.JPG")
+seg_res <- load_segmentation_results(results$image_path)
+seg_tbl <- create_segmentation_table(seg_res)
+
+img <- readImage(results$image_path, resize = NULL, rotate = NULL)
+pdf("~/segmentr-paper/figures/in-progress/example-5-original.pdf", width = 10, height = 7)
+plotImageArray(img, main = "")
+dev.off()
+
+pdf("~/segmentr-paper/figures/in-progress/example-5-segmented.pdf", width = 10, height = 7)
+plot_seg_results(seg_res, main = "")
+dev.off()
+
+##### EXAMPLE 6
+results <- run_grounded_segmentation("~/segmentr-paper/extdata/images/other_images/myrcia.jpg", labels = c("an individual leaf."))
+results <- get_segmentation_paths("~/segmentr-paper/extdata/images/other_images/myrcia.jpg")
+seg_res <- load_segmentation_results(results$image_path)
+seg_tbl <- create_segmentation_table(seg_res)
+
+img <- readImage(results$image_path, resize = NULL, rotate = NULL)
+pdf("~/segmentr-paper/figures/in-progress/example-6-original.pdf", width = 10, height = 7)
+plotImageArray(img, main = "")
+dev.off()
+
+pdf("~/segmentr-paper/figures/in-progress/example-6-segmented.pdf", width = 10, height = 7)
+plot_seg_results(seg_res, main = "")
+dev.off()
+
+##### EXAMPLE 7
+results <- run_grounded_segmentation("~/segmentr-paper/extdata/images/other_images/euginia.jpeg", labels = c("an individual leaf.", "a paper with text on it in the bottom corner."))
+results <- get_segmentation_paths("~/segmentr-paper/extdata/images/other_images/euginia.jpeg")
+seg_res <- load_segmentation_results(results$image_path)
+seg_tbl <- create_segmentation_table(seg_res)
+
+img <- readImage(results$image_path, resize = NULL, rotate = NULL)
+pdf("~/segmentr-paper/figures/in-progress/example-7-original.pdf", width = 10, height = 7)
+plotImageArray(img, main = "")
+dev.off()
+
+pdf("~/segmentr-paper/figures/in-progress/example-7-segmented.pdf", width = 10, height = 7)
+plot_seg_results(seg_res, main = "")
+dev.off()
+
+
+
